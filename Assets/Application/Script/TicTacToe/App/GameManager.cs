@@ -118,6 +118,7 @@ namespace TicTacToe.App
                 p1.SetPlayable();
                 p1.OnStateChanged
                     .Where(state => state != PlayerState.MyTurn)
+                    .First()
                     .Subscribe(state =>
                     {
                         Turn(p2, p1);
